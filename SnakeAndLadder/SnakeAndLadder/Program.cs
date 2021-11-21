@@ -27,6 +27,17 @@ namespace SnakeAndLadder
                 if (Option == Ladder)
                 {
                     CurrentPosition = CurrentPosition + DiceNumber;
+                    if (CurrentPosition>WinnigPosition)
+                    {
+                        CurrentPosition = CurrentPosition - DiceNumber;
+                        
+                    }
+                    else if (CurrentPosition==WinnigPosition)
+                    {
+                        Console.WriteLine("Player Reached " + CurrentPosition);
+                        Console.ReadLine();
+                    }
+                        
                     Console.WriteLine("Ladder Current Position " + CurrentPosition);
                 }
                 else if (Option == Snake)
@@ -35,12 +46,10 @@ namespace SnakeAndLadder
                     if (CurrentPosition < StartingPosition)
                     {
                         CurrentPosition = StartingPosition;
+
                         Console.WriteLine("Snake Current Position " + CurrentPosition);
                     }
-                    else
-                    {
-                        Console.WriteLine("Snake Current Position " + CurrentPosition);
-                    }
+                    Console.WriteLine("Snake Current Position " + CurrentPosition);
                 }
                 else
                 {
