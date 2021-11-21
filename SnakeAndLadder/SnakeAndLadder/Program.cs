@@ -8,7 +8,7 @@ namespace SnakeAndLadder
         {
             int StartingPosition = 0;
             //Console.WriteLine("Starting position " + StartingPosition);
-
+            int DiesRoled = 0;
             int Ladder = 1;
             int Snake = 2;
             int CurrentPosition = 0;
@@ -16,6 +16,7 @@ namespace SnakeAndLadder
 
             while (CurrentPosition <= WinnigPosition)
             {
+                DiesRoled ++; 
                 Random random = new Random();
                 int DiceNumber = random.Next(1, 7);
 
@@ -35,6 +36,7 @@ namespace SnakeAndLadder
                     else if (CurrentPosition==WinnigPosition)
                     {
                         Console.WriteLine("Player Reached " + CurrentPosition);
+                        Console.WriteLine("Number of Times DiesRoled " + DiesRoled);
                         Console.ReadLine();
                     }
                         
@@ -56,6 +58,7 @@ namespace SnakeAndLadder
                     Console.WriteLine("Their is no play");
                 }
             }
+            
 
         }
     }
